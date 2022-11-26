@@ -1,6 +1,7 @@
 /*
-universal selector
-The box-sizing CSS property sets how the total width and height of an element is calculated (https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+1) The box-sizing CSS property sets how the total width and height of an element is calculated
+   ref: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+2) Removes margin and padding for all elements
 */
 * {
     box-sizing: border-box;
@@ -9,41 +10,55 @@ The box-sizing CSS property sets how the total width and height of an element is
 }
 
 /*
-Sets the background colour for the body element
-Added font-family property to avoid duplication
+1) Sets the background colour for the body element
+2) Added font-family property to avoid duplication
+3) Sets the text colour to white for the entire page. Any elements that do nat have white text will override this
 */
 body {
     background-color: #d9dcd6;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
 }
 
 /*
-Sets various properties to the header element (index.html lines 11 - 26)
-Also removed the font-family property since it is declared in the body element and is inherited here
+1) Sets a 20px margin to the top, right, bottom, and left to the header element.
+2) Also removed the font-family property since it is declared in the body element and is inherited here.
+3) Adds a background colour to the header element
+4) Removed 'color' property because it inherits it from the 'body' element.
+
 */
 header {
     padding: 20px;
     background-color: #2a607c;
-    color: #ffffff;
+    /* color: #ffffff; */
 }
 
-/* Sets various properties to the h1 element (only one h1 element on page so no need to scope it to the header element which would be too specific) */
+/*
+1) Only one h1 element on page so no need to scope it to the header element which would be too specific (header h1)
+2) Sets the element to 'inline-block' because of the need to set a height property
+3) Set the h1 element to have a height of 48 pixels1)
+*/
 h1 {
     display: inline-block;
     font-size: 48px;
 }
 
 /*
-Styles the letters seo within the word Horiseon to be a different colour
-Also no need to scope the h1 element to the header element since there is only one h1 element on the pahe
+1) Styles the characters 'seo' within the word Horiseon to be a different colour from the rest of the characters.
+2) Also no need to scope the h1 element to the header element since there is only one h1 element on the page
 */
 h1 .seo {
     color: #d9dcd6;
 }
 
 /*
-Sets various properties to the nav element (only one nav element on page so no need to scope it to the header element which would be too specific)
-Also removed the font-family property since it is declared in the body element and is inherited here
+1) No need to scope it to the header element which would be too specific.
+2) Also removed the font-family property since it is declared in the body element and is inherited here.
+3) Adds padding of 15 pixels to the top of the nav element
+4) Adds a 20 pixel margin to the right of the nav element
+5) Positions the vav element to thr right of the geader element (float-right)
+6) Sets the font size to 20 pixels
+
 */
 nav {
     padding-top: 15px;
@@ -52,18 +67,29 @@ nav {
     font-size: 20px;
 }
 
-/* Sets various properties to the ul element (only one ul element on page so no need to scope it to the header nav ul element which would be too specific) */
+/*
+1) Only one ul element on page so no need to scope it to the 'header nav' element which would be too specific.
+2) The list-style-type CSS property sets the marker (such as a disc, character, or custom counter style) of
+   a list item element. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type
+*/
 ul {
     list-style-type: none;
 }
 
-/* Sets various properties to the li elements (li elements only used inside header nav ul so no need to scope it to the header nav ul element which would be too specific) */
+/*
+1) li elements only used inside header nav ul so no need to scope it to the 'header nav ul element' which would be too specific.
+2) Changed the display property from 'inline-block' to 'inline' because 'inline-block' is essentially the same thing as
+   'inline', except that you can set height and width values, which we do not do.
+   ref: https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/
+3) Adds a left hand margin 25 pixels to the li elements
+*/
 li {
-    display: inline-block;
+    /* display: inline-block; */
+    display: inline;
     margin-left: 25px;
 }
 
-/* sets the colour of all anchor tags to white and remove the underline */
+/* sets the colour of all anchor tags to white and removes the underline text decoration default */
 a {
     color: #ffffff;
     text-decoration: none;
@@ -74,10 +100,19 @@ p {
     font-size: 16px;
 }
 
-/* sets various styles to the hero div element */
+/*
+1) Sets the height to 800 pixels
+2) Since the div with a class of 'hero' is a div, there is no need to set a width because it is a block level element
+   and therefore takes up the full available width.
+3) Adds a bottom margin of 25 pixels
+4) Sets a background image to this div
+5) Sets the background size to 'cover' - Scales the image (while preserving its ratio) to the smallest possible size
+   to fill the container' ref: https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+6) Centers the image, both virtically and horizontally, to the center of the div.
+*/
 .hero {
     height: 800px;
-    width: 100%;
+    /* width: 100%; */
     margin-bottom: 25px;
     background-image: url("../images/digital-marketing-meeting.jpg");
     background-size: cover;
@@ -85,9 +120,10 @@ p {
 }
 
 /*
-The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
-(ref: https://developer.mozilla.org/en-US/docs/Web/CSS/float)
-Used to align images to the left of text in this page
+1) The float CSS property places an element on the left or right side of its container, allowing text and inline elements to
+   wrap around it. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/float1. Used to align images to the left of
+   text in this page.
+2) Adds a 25 pixel margin to the right anything floated left - in our case, images.
 */
 .float-left {
     float: left;
@@ -95,9 +131,10 @@ Used to align images to the left of text in this page
 }
 
 /*
-The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
-(ref: https://developer.mozilla.org/en-US/docs/Web/CSS/float)
-Used to align images to the right of text in this page
+1) The float CSS property places an element on the left or right side of its container, allowing text and inline elements to
+   wrap around it. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/float1. Used to align images to the left of
+   text in this page.
+2) Adds a 25 pixel margin to the left anything floated left - in our case, images.
 */
 .float-right {
     float: right;
@@ -105,13 +142,9 @@ Used to align images to the right of text in this page
 }
 
 /*
-The width CSS property sets an element's width. By default, it sets the width of the content area,
-but if box-sizing is set to border-box, it sets the width of the border area.
-(ref: https://developer.mozilla.org/en-US/docs/Web/CSS/width)
-Used to restrict the width of the main content area to 75%. This allows room for the sidebar to appear on the right of the page
-Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
-(ref: https://www.w3schools.com/css/css_inline-block.asp)
-We also give a margin of 20px to the top, right, bottom, and left
+1) Sets the width to 75% of the body element to allow room for the sidebar to appear on the right of the page.
+2) Set the display to inline-block because we needed to add a width.
+3) Added a margin of 20px to the top, right, bottom, and left.
 */
 .content {
     width: 75%;
@@ -120,32 +153,52 @@ We also give a margin of 20px to the top, right, bottom, and left
 }
 
 /*
-sets various styles to right hand sidebar (aside element)
+1) Added a right hand marginn of 20 pixels
+2) Added 20 pixels of padding to the top, right, bottom, and left
+3) The CSS clear controls the behavior of the floating element by preventing the overlapping of consecutive
+   elements over the floating element. ref: https://www.bitdegree.org/learn/css-clear.
+4) Aligned the sidebar to the right with float-right
+5) Gave the sidebar a width od 20%
+6) Removed height property because it has no effect
+7) added a background colour to the sisebar
+8) added a bottom margin of 20px
+
 Also removed the font-family property since it is declared in the body element and is inherited here
 */
-.benefits {
+aside {
     margin-right: 20px;
     padding: 20px;
     clear: both;
     float: right;
     width: 20%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #2589bd;
+    margin-bottom: 20px;
 }
 
-/* Combined .benefit-lead, .benefit-brand, .benefit-cost rules to avoid duplication */
+/*
+1) Combined .benefit-lead, .benefit-brand, .benefit-cost rules to avoid duplication
+2) Removed 'color' property because it inherits it from the 'body' element.
+*/
 .benefit-lead, .benefit-brand, .benefit-cost {
     margin-bottom: 32px;
-    color: #ffffff;
 }
 
-/* .benefit-lead h3, .benefit-brand h3, .benefit-cost h3 were too specific as all h3 elements share the same properties */
+/*
+1) .benefit-lead h3, .benefit-brand h3, .benefit-cost h3 were too specific as all h3 elements share the
+   same properties so just used h3
+2) Alligned the headings to the center
+*/
 h3 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* Combined .benefit-lead img, .benefit-brand img, .benefit-cost img rules to avoid duplication */
+/*
+1) Combined .benefit-lead img, .benefit-brand img, .benefit-cost img rules to avoid duplication
+2) Made the images block elements
+3) Added a top margin of 10 pixels and centered the images (icons) horizontally
+*/
 .benefit-lead img, .benefit-brand img, .benefit-cost img {
     display: block;
     margin: 10px auto;
@@ -153,9 +206,15 @@ h3 {
 }
 
 /*
-No need to  use .search-engine-optimization, .online-reputation-management, .social-media-marketing classes
-because styling is used innall sections
-Also removed the font-family property since it is declared in the body element and is inherited here
+1) No need to  use .search-engine-optimization, .online-reputation-management, .social-media-marketing classes
+   because styling is used inn all sections
+2) Also removed the font-family property since it is declared in the body element and is inherited here
+3) Added a bottom margin of 20 pixels
+4) Added top, right, bottom, and left padding
+5) Made each section 300 pixels high
+6) added a background colour
+7) Removed 'color' property because it inherits it from the 'body' element.
+
 */
 section  {
     margin-bottom: 20px;
@@ -171,8 +230,9 @@ section img {
 }
 
 /*
-.search-engine-optimization h2, .online-reputation-management h2, .social-media-marketing h2 were too specific.
-The only other h2 appers in the footer and is scoped to .footer class
+1) .search-engine-optimization h2, .online-reputation-management h2, .social-media-marketing h2 were too specific.
+   The only other h2 appers in the footer and is scoped to the footer
+2) Made all h2 tags 36 pixels except scoped ones
 */
 h2 {
     margin-bottom: 20px;
@@ -180,8 +240,10 @@ h2 {
 }
 
 /*
-Add styling to the footer element. No need to use .footer class
-Also removed the font-family property since it is declared in the body element and is inherited here
+1) Add styling to the footer element. No need to use .footer class
+2) Also removed the font-family property since it is declared in the body element and is inherited here
+3) Cleared all floats
+4) Alligned content of footer to be centered
 */
 footer {
     padding: 30px;
@@ -189,7 +251,13 @@ footer {
     text-align: center;
 }
 
-/* Scopes the font size of the h2 element that sits in the footer element to 20 pixels. Otherwise  */
+/* Scopes the font size and colour of the h2 tag in footer element to 20 pixels and black respectively. */
 footer h2 {
     font-size: 20px;
+    color: black;
+}
+
+/* Scopes the colour of the p tag in footer elementto black. */
+footer p {
+    color: black;
 }
