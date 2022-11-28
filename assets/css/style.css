@@ -251,13 +251,16 @@ footer {
     text-align: center;
 }
 
-/* Scopes the font size and colour of the h2 tag in footer element to 20 pixels and black respectively. */
-footer h2 {
+/*
+1) Changed the h2 element in the footer to h3 so that the heading tags went from h1 to h3 in the markup
+2) Scopes the font size and colour of the h3 tag in footer element to 20 pixels and black respectively.
+*/
+footer h3 {
     font-size: 20px;
     color: black;
 }
 
-/* Scopes the colour of the p tag in footer elementto black. */
+/* Scopes the colour of the p tag in footer element to black. */
 footer p {
     color: black;
 }
