@@ -214,14 +214,16 @@ h3 {
 5) Made each section 300 pixels high
 6) added a background colour
 7) Removed 'color' property because it inherits it from the 'body' element.
-
 */
 section  {
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
     background-color: #0072bb;
     color: #ffffff;
+}
+/* The sections in main need a height of 300px */
+main section {
+    height: 300px;
 }
 
 /* Limit the height of all images that appear in section elements to 200px */
